@@ -24,7 +24,7 @@ var Renderer = function()
     this.radialScale = 0.02;
     this.density = 0.2;
     this.emission = 0.1
-    this.frequency = 10.0;
+    this.frequency = 50.0;
     this.exposure = 2.0;
     this.contrast = 1.0;
     this.saturation = 1.0;
@@ -182,7 +182,8 @@ Renderer.prototype.render = function()
     this.raymarchProgram.uniform2F("phase4", a4*Math.cos(hydrogenic.phase4), a4*Math.sin(hydrogenic.phase4));
 
     let time_sec = this.time_ms/1.0e3;
-    let overall_phase = time_sec * 2.0 * Math.PI * this.frequency * hydrogenic.n;
+    let energy = 1.0 - 1.0/(hydrogenic.n*hydrogenic.n);
+    let overall_phase = time_sec * 2.0 * Math.PI * this.frequency * energy;
     this.raymarchProgram.uniform2F("overall_phase", Math.cos(overall_phase), Math.sin(overall_phase));
     //console.log('overall_phase: ', overall_phase);
 

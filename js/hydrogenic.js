@@ -33,8 +33,7 @@ var Hydrogenic = function()
 
     this.camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
     this.camera.lookAt(new THREE.Vector3(0.0, 0.0, 0.0));
-    let po = 1.0;
-    this.camera.position.set(po, 0.0, 2.0*po);
+    this.camera.position.set(1.8, 0.0, 0.0);
     this.camera.up.set(0.0, 0.0, 1.0);
     this.camControls = new THREE.OrbitControls(this.camera, this.container);
     this.camControls.target.set(0.0, 0.0, 0.0);
@@ -52,7 +51,7 @@ var Hydrogenic = function()
                                   'd2', 'd1', 'd0', 'd[z2]', 'd[xz]', 'd[yz]', 'd[xy]', 'd[x2-y2]',
                                   'f3', 'f2', 'f1', 'f0', 'f[z3]', 'f[xz2]', 'f[yz2]', 'f[xyz]', 'f[z(x2-y2)', 'f[x(x2-3y2)]', 'f[y(3x2-y2)]'];
     hydrogenic.n = 4;
-    hydrogenic.orbital = 'p1';
+    hydrogenic.orbital = 's';
     hydrogenic.interatomic = 3.0;
     hydrogenic.amplitude1 = 1.0;
     hydrogenic.amplitude2 = 1.0;
