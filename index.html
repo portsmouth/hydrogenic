@@ -1,0 +1,26 @@
+
+<body onload="onLoad();">
+
+<script src="./js/thirdparty/jquery-1.11.3.min.js"></script>
+<script src="./js/thirdparty/three/three.min.js"></script>
+<script src="./js/thirdparty/three/libs/stats.min.js"></script>
+<script src="./js/thirdparty/three/libs/dat.gui.min.js"></script>
+<script src="./js/thirdparty/three/controls/OrbitControls.js"></script>
+
+<script src="./js/gl.js"></script>
+<script src="./js/gui.js"></script>
+<script src="./js/colormaps.js"></script>
+<script src="./js/shaders.js"></script>
+<script src="./js/renderer.js"></script>
+<script src="./js/hydrogenic.js"></script>
+
+<?/* ------------------------------------------------------------------*/?>
+<?/*                            main loop                              */?>
+<?/* ------------------------------------------------------------------*/?>
+
+<script type="text/javascript">
+function onLoad() { hydrogenic = new Hydrogenic(); animateLoop(); }
+function animateLoop() { hydrogenic.render(); window.requestAnimationFrame(animateLoop); }
+</script>
+
+</body>
